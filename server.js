@@ -1,11 +1,16 @@
 const express = require('express');
+require('dotenv').config();
+
+const port = process.env.PORT || 3000;
+const connectDB = require('./config/db');
+
+connectDB();
+
 const app = express();
 
 // Body parser middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-
-const port = 3000;
 
 app.get('/', (req, res) => {
   res.send('Hello World!');
