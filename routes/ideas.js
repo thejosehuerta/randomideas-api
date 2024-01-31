@@ -58,6 +58,36 @@ router.post('/', (req, res) => {
     res.json({ success: true, data: idea });
 });
   
+// Update idea
+router.put('/:id', (req, res) => {
+    const idea = ideas.find((idea) => idea.id === parseInt(req.params.id));
+  
+    if (!idea) {
+        res.status(404).json({ success: false, error: 'Resource not found' });
+    } else {
+        // In case value isn't updated, keep the value that is already there.
+        idea.text = req.body.text || idea.text;
+        idea.tag = req.body.tag || idea.tag;
+
+        res.json({ success: true, data: idea });
+    }
+});
+
+// Delete idea
+router.delete('/:id', (req, res) => {
+    const idea = ideas.find((idea) => idea.id === parseInt(req.params.id));
+  
+    if (!idea) {
+        res.status(404).json({ success: false, error: 'Resource not found' });
+    } else {
+        const index = ideas.indexOf(idea);
+        ideas.splice(index, 1);
+
+        res.json({ success: true, data: {} });
+    }
+});
+  
+  
 
 // Export router
 module.exports = router;
