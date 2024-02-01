@@ -1,20 +1,25 @@
+const path = require('path');
 const express = require('express');
 require('dotenv').config();
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 4000;
 const connectDB = require('./config/db');
 
 connectDB();
 
 const app = express();
 
+/*
+Express has a built in middleware function called express.static that 
+allows us to serve static files from any folder. 
+We will use this to serve our production files from the public folder.
+*/
+// Static Folder
+app.use(express.static(path.join(__dirname, 'public')));
+
 // Body parser middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-
-app.get('/', (req, res) => {
-  res.send('Hello World!');
-});
 
 // Hook up the routes folder
 const ideasRouter = require('./routes/ideas');
