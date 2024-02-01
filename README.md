@@ -1,1 +1,1 @@
-# randomideas-api
+# randomideas-app
