@@ -9,6 +9,9 @@ class Modal {
         // Use bind method to make sure that the this keyword is referring to the class.
         this._modalBtn.addEventListener('click', this.open.bind(this));
         window.addEventListener('click', this.outsideClick.bind(this));
+        document.addEventListener('closemodal', () => {
+            this.close();
+        });
     }
 
     open() {
