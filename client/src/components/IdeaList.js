@@ -48,8 +48,7 @@ class IdeaList {
     render() {
         this._ideaListEl.innerHTML = this._ideas.map((idea) => {
             const tagClass = this.getTagClass(idea.tag);
-            return `
-            <div class="card">
+            return `<div class="card">
             <button class="delete"><i class="fas fa-times"></i></button>
           <h3>
             ${idea.text}
@@ -59,9 +58,8 @@ class IdeaList {
             Posted on <span class="date">${idea.date}</span> by
             <span class="author">${idea.username}</span>
           </p>
-          </div>
-            `;
-        }).join();
+          </div>`;
+        }).join('');
     }
 }
 
