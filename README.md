@@ -29,7 +29,7 @@ or
 npm run dev (Nodemon)
 ```
 
-Visit `http://localhost:5000`
+Visit `http://localhost:4000`
 
 ### Front-end/Webpack Dev Server
 
@@ -66,7 +66,6 @@ MONGO_URI=your_mongodb_uri
 | /api/ideas     | Get all ideas  | GET    | None                    |
 | /api/ideas/:id | Get idea by id | GET    | None                    |
 | /api/ideas     | Add idea       | POST   | { text, tag, username } |
-| /api/ideas/:id | Update idea    | PUT    | { text, tag, username } |
 | /api/ideas/:id | Delete idea    | DELETE | username                |
 
 When updating or deleting, the username must match the username of the idea creator.
