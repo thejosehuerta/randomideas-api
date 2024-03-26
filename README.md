@@ -3,7 +3,7 @@
 This is a fullstack application for sharing random ideas. It is a project built following the **Modern JS From The Beginning** course provided by Traversy Media. <br><br>
 I built this application as a way to learn how to build a full stack application using Node.js/Express REST API that uses MongoDB for a database. The client-side is built with Webpack and vanilla JavaScript.
 
-<img src="assets/screen.png">
+<img src="/screen.png">
 
 ## Usage
 
